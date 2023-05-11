@@ -1,0 +1,34 @@
+package model;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+
+public class Teste {
+	public static void main(String[] args) {
+		
+		Especialidades e = new Especialidades("Pediatra");
+		PlanoSaude ps = new PlanoSaude("Unimed");
+		Farmacia f = new Farmacia();
+		
+		
+		SessionFactory sessionfactory = null;
+		try {
+			sessionfactory = new Configuration().configure().buildSessionFactory(); 
+		}catch(Exception ex) {
+			System.err.println("Erro ao se conectar com o banco!");
+		}
+		
+		Session session =  sessionfactory.openSession();
+		
+		session.beginTransaction();
+		session.save(ps);
+		session.getTransaction().commit();
+		session.close();
+			
+		
+
+   }
+
+}
