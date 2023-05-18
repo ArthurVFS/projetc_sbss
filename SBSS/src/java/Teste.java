@@ -9,8 +9,8 @@ import org.hibernate.cfg.Configuration;
 public class Teste {
 	public static void main(String[] args) {
 		
-		Especialidade e = new Especialidade("Pediatra");
-		PlanoSaude ps = new PlanoSaude("Promédica");
+		Especialidade e = new Especialidade();
+		PlanoSaude ps = new PlanoSaude("Promédica", null);
 		
 		
 		

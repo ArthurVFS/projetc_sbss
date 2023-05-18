@@ -11,15 +11,21 @@ public class Equipamento {
 	@GeneratedValue
 	private int id;
 	private String nomeEquip;
+	private EquiFor equipsFor;
+	
+	
+	
 	
 	
 	
 	public Equipamento() {
-	
+		
 	}
-
-	public Equipamento( String nomeEquip) {
+	
+	public Equipamento(String nomeEquip, EquiFor equipsFor) {
+		
 		this.nomeEquip = nomeEquip;
+		this.equipsFor = equipsFor;
 	}
 	
 	public int getId() {
@@ -34,6 +40,15 @@ public class Equipamento {
 	public void setNomeEquip(String nomeEquip) {
 		this.nomeEquip = nomeEquip;
 	}
+	public EquiFor getEquipsFor() {
+		return equipsFor;
+	}
+	public void setEquipsFor(EquiFor equipsFor) {
+		this.equipsFor = equipsFor;
+	}
+	
+	
+	
 	
 	
 

@@ -9,33 +9,33 @@ public class Especialidade {
 	
 	@Id
 	@GeneratedValue
-	private int codigo;
+	private int id;
 	private String nomeEspec;
-
+	private Profissional profissionais;
 	
-	public Especialidade() {
-		
-	}
 	
-	public Especialidade( String nomeEspec) {
-		
-		this.nomeEspec = nomeEspec;
-	}
 	
-	public int getCodigo() {
-		return codigo;
+	public int getid() {
+		return id;
 	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setid(int id) {
+		this.id = id;
 	}
-	
 	public String getNomeEspec() {
 		return nomeEspec;
 	}
-	
 	public void setNomeEspec(String nomeEspec) {
 		this.nomeEspec = nomeEspec;
 	}
+	public Profissional getProfissionais() {
+		return profissionais;
+	}
+	public void setProfissionais(Profissional profissionais) {
+		this.profissionais = profissionais;
+	}
+
+	
+	
 	
 	
 

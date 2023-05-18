@@ -3,6 +3,7 @@ package java;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class PlanoSaude {
@@ -12,28 +13,50 @@ public class PlanoSaude {
 	private int id;
 	private String nomeP;
 	
+	@ManyToOne
+	private Profissional profissionais;
 	
 	
-	
+
 	public PlanoSaude() {
-	}
 	
-	public PlanoSaude(String nomeP) {
+	}
+
+	public PlanoSaude(String nomeP, Profissional profissionais) {
+	
 		this.nomeP = nomeP;
+		this.profissionais = profissionais;
 	}
-	
-	public int getid() {
+
+	public int getId() {
 		return id;
 	}
-	public void setCodigo(int codigo) {
-		this.id = codigo;
+
+	public void setId(int id) {
+		this.id = id;
 	}
+
 	public String getNomeP() {
 		return nomeP;
 	}
+
 	public void setNomeP(String nomeP) {
 		this.nomeP = nomeP;
 	}
+
+	public Profissional getProfissionais() {
+		return profissionais;
+	}
+
+	public void setProfissionais(Profissional profissionais) {
+		this.profissionais = profissionais;
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 
