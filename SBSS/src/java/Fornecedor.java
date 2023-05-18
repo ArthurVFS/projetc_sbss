@@ -1,11 +1,21 @@
 package java;
 
-public class Fornecedor {
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+public class Fornecedor {
+	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String nome;
 	private String telefone;
+	
+	@ManyToOne
 	private Endereco enderecos;
+	
+	@ManyToOne
 	private EquiFor equipsFor;
 	
 	

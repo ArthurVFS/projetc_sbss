@@ -1,9 +1,19 @@
 package java;
 
-public class MedFarm {
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+public class MedFarm {
+	
+    @Id
+    @GeneratedValue
 	private int id;
+    
+    @ManyToOne
 	private Medicamento medicamentos;
+    
+    @ManyToOne
 	private Farmacia farmacias;
 	
 	

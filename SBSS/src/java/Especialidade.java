@@ -3,6 +3,7 @@ package java;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Especialidade {
@@ -11,6 +12,8 @@ public class Especialidade {
 	@GeneratedValue
 	private int id;
 	private String nomeEspec;
+	
+	@ManyToOne
 	private Profissional profissionais;
 	
 	

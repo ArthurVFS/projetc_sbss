@@ -1,8 +1,16 @@
 package java;
 
-public class EquiFor {
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+public class EquiFor {
+	
+    @Id
+    @GeneratedValue
 	private int id;
+    
+    @ManyToOne
 	private Equipamento equipamentos;
 	
 	

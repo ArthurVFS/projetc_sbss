@@ -1,10 +1,18 @@
 package java;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 public class Avaliacao {
 
+	@Id
+	@GeneratedValue
 	private int id;
 	private float nota;
 	private String comentario;
+	
+	@ManyToOne
 	private Clinica clinica;
 	
 	
