@@ -3,20 +3,18 @@ package java;
 public class Farmacia extends Fornecedor {
 
 	private int id;
-	private MedFarm medsFarm;
+	private Medicamento medicamentos;
 	
 	
-	
-	public Farmacia(MedFarm medsFarm) {
 
-		this.medsFarm = medsFarm;
+	public Farmacia(Medicamento medicamentos) {
+		this.medicamentos = medicamentos;
 	}
 	
 	
 	public Farmacia() {
-
+		
 	}
-
 
 	public int getId() {
 		return id;
@@ -24,12 +22,15 @@ public class Farmacia extends Fornecedor {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public MedFarm getMedsFarm() {
-		return medsFarm;
+	public Medicamento getMedicamentos() {
+		return medicamentos;
 	}
-	public void setMedsFarm(MedFarm medsFarm) {
-		this.medsFarm = medsFarm;
+	public void setMedicamentos(Medicamento medicamentos) {
+		this.medicamentos = medicamentos;
 	}
+	
+	
+	
 	
 	
 	

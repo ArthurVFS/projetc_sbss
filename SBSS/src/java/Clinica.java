@@ -13,11 +13,7 @@ public class Clinica extends Fornecedor {
 	@GeneratedValue
 	private int id;
 	
-	@ManyToOne
-	private ClinicaProf clinicaProfs;
 	
-	@ManyToOne
-	private ClinicaExam clinicaExams;
 	
 	@ManyToOne
 	private Avaliacao avaliacoes;
@@ -29,10 +25,8 @@ public class Clinica extends Fornecedor {
 		
 	}
 
-	public Clinica(ClinicaProf clinicaProfs, ClinicaExam clinicaExams, Avaliacao avaliacoes) {
+	public Clinica( Avaliacao avaliacoes) {
 
-		this.clinicaProfs = clinicaProfs;
-		this.clinicaExams = clinicaExams;
 		this.avaliacoes = avaliacoes;
 	}
 
@@ -42,22 +36,6 @@ public class Clinica extends Fornecedor {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public ClinicaProf getClinicaProfs() {
-		return clinicaProfs;
-	}
-
-	public void setClinicaProfs(ClinicaProf clinicaProfs) {
-		this.clinicaProfs = clinicaProfs;
-	}
-
-	public ClinicaExam getClinicaExams() {
-		return clinicaExams;
-	}
-
-	public void setClinicaExams(ClinicaExam clinicaExams) {
-		this.clinicaExams = clinicaExams;
 	}
 
 	public Avaliacao getAvaliacoes() {

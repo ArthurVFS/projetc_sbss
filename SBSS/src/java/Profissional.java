@@ -14,8 +14,6 @@ public class Profissional {
 	private int id;
 	private String nome;
 	
-	@ManyToOne
-	private ClinicaProf clinicasProf;
 	
 	@ManyToOne
 	private Especialidade especialidades;
@@ -30,10 +28,9 @@ public class Profissional {
 		
 	}
 
-	public Profissional(String nome, ClinicaProf clinicasProf, Especialidade especialidades, PlanoSaude planosSaude) {
+	public Profissional(String nome, Especialidade especialidades, PlanoSaude planosSaude) {
 
 		this.nome = nome;
-		this.clinicasProf = clinicasProf;
 		this.especialidades = especialidades;
 		this.planosSaude = planosSaude;
 	}
@@ -54,13 +51,6 @@ public class Profissional {
 		this.nome = nome;
 	}
 
-	public ClinicaProf getClinicasProf() {
-		return clinicasProf;
-	}
-
-	public void setClinicasProf(ClinicaProf clinicasProf) {
-		this.clinicasProf = clinicasProf;
-	}
 
 	public Especialidade getEspecialidades() {
 		return especialidades;

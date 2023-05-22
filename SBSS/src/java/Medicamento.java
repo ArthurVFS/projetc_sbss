@@ -13,9 +13,6 @@ public class Medicamento {
 	private int id;
 	private String nome;
 	
-	@ManyToOne
-	private MedFarm medFarms;
-	
 	
 	
 	
@@ -23,10 +20,9 @@ public class Medicamento {
 		
 	}
 	
-	public Medicamento(String nome, MedFarm medFarms) {
+	public Medicamento(String nome) {
 
 		this.nome = nome;
-		this.medFarms = medFarms;
 	}
 	
 	public int getId() {
@@ -40,12 +36,6 @@ public class Medicamento {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public MedFarm getMedFarms() {
-		return medFarms;
-	}
-	public void setMedFarms(MedFarm medFarms) {
-		this.medFarms = medFarms;
 	}
 	
 	

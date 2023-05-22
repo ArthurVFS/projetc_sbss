@@ -15,9 +15,6 @@ public class Exame {
 	@GeneratedValue
 	private int id;
 	private String nome;
-	
-	@ManyToOne
-	private ClinicaExam clinicasExam;
 
 	
 	
@@ -26,10 +23,10 @@ public class Exame {
 
 	}
 
-	public Exame(String nome, ClinicaExam clinicasExam) {
+	public Exame(String nome) {
 	
 		this.nome = nome;
-		this.clinicasExam = clinicasExam;
+	
 	}
 
 	public int getId() {
@@ -48,14 +45,7 @@ public class Exame {
 		this.nome = nome;
 	}
 
-	public ClinicaExam getClinicasExam() {
-		return clinicasExam;
-	}
 
-	public void setClinicasExam(ClinicaExam clinicasExam) {
-		this.clinicasExam = clinicasExam;
-	}
-	
 	
 	
 

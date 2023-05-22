@@ -15,21 +15,17 @@ public class Fornecedor {
 	@ManyToOne
 	private Endereco enderecos;
 	
-	@ManyToOne
-	private EquiFor equipsFor;
-	
-	
 	
 	public Fornecedor() {
 		
 	}
 
 
-	public Fornecedor(String nome, String telefone, Endereco enderecos, EquiFor equipsFor) {
+	public Fornecedor(String nome, String telefone, Endereco enderecos) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.enderecos = enderecos;
-		this.equipsFor = equipsFor;
+	
 	}
 	
 	
@@ -58,12 +54,7 @@ public class Fornecedor {
 	public void setEnderecos(Endereco enderecos) {
 		this.enderecos = enderecos;
 	}
-	public EquiFor getEquipsFor() {
-		return equipsFor;
-	}
-	public void setEquipsFor(EquiFor equipsFor) {
-		this.equipsFor = equipsFor;
-	}
+	
 	
 	
 	
