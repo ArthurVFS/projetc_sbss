@@ -4,48 +4,48 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import model.Profissional;
+import model.PlanoSaude;
 
-public class DaoProfissional {
+public class DAOPlanoSaude {
 	
 	
-	public void inserirProfissional(Profissional pro) {
+	public void inserirPlanoSaude(PlanoSaude planSau) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.save(pro);
+		sessao.save(planSau);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void excluirProfissional(Profissional pro) {
+	public void excluirPlanoSaude(PlanoSaude planSau) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.delete(pro);
+		sessao.delete(planSau);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void editarProfissional(Profissional pro) {
+	public void editarPlanoSaude(PlanoSaude planSau) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.update(pro);
+		sessao.update(planSau);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public List<Profissional> listarProfissional() {
+	public List<PlanoSaude> listarPlanoSaude() {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		List<Profissional> profissionais = sessao.createQuery("FROM Profissional").list();
+		List<PlanoSaude> planoSaudes = sessao.createQuery("FROM PlanoSaude").list();
 		sessao.getTransaction().commit();
 		sessao.close();
-		return profissionais;
+		return planoSaudes;
 	}
 	
-	public Profissional localizarProfissional(int id) {
+	public PlanoSaude localizarPlanoSaude(int id) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		Profissional obj = (Profissional) sessao.createQuery("FROM Profissional WHERE id = " + id).uniqueResult();
+		PlanoSaude obj = (PlanoSaude) sessao.createQuery("FROM PlanoSaude WHERE id = " + id).uniqueResult();
 		sessao.getTransaction().commit();
 		sessao.close();
 		return obj;

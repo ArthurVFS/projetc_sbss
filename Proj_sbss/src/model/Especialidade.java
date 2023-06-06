@@ -13,11 +13,15 @@ public class Especialidade {
 	private int id;
 	private String nomeEspec;
 	
-	@ManyToOne
-	private Profissional profissionais;
 	
 	
-	
+	public Especialidade() {
+		super();
+	}
+	public Especialidade(String nomeEspec) {
+		super();
+		this.nomeEspec = nomeEspec;
+	}
 	public int getid() {
 		return id;
 	}
@@ -30,12 +34,7 @@ public class Especialidade {
 	public void setNomeEspec(String nomeEspec) {
 		this.nomeEspec = nomeEspec;
 	}
-	public Profissional getProfissionais() {
-		return profissionais;
-	}
-	public void setProfissionais(Profissional profissionais) {
-		this.profissionais = profissionais;
-	}
+	
 
 	
 	

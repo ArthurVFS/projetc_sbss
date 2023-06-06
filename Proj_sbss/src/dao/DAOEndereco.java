@@ -4,48 +4,47 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import model.Profissional;
+import model.Endereco;
 
-public class DaoProfissional {
-	
-	
-	public void inserirProfissional(Profissional pro) {
+public class DAOEndereco {
+		
+	public void inserirEndereco(Endereco end) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.save(pro);
+		sessao.save(end);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void excluirProfissional(Profissional pro) {
+	public void excluirEndereco(Endereco end) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.delete(pro);
+		sessao.delete(end);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void editarProfissional(Profissional pro) {
+	public void editarEndereco(Endereco end) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.update(pro);
+		sessao.update(end);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public List<Profissional> listarProfissional() {
+	public List<Endereco> listarEndereco() {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		List<Profissional> profissionais = sessao.createQuery("FROM Profissional").list();
+		List<Endereco> enderecos = sessao.createQuery("FROM Endereco").list();
 		sessao.getTransaction().commit();
 		sessao.close();
-		return profissionais;
+		return enderecos;
 	}
 	
-	public Profissional localizarProfissional(int id) {
+	public Endereco localizarEndereco(int id) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		Profissional obj = (Profissional) sessao.createQuery("FROM Profissional WHERE id = " + id).uniqueResult();
+		Endereco obj = (Endereco) sessao.createQuery("FROM Endereco WHERE id = " + id).uniqueResult();
 		sessao.getTransaction().commit();
 		sessao.close();
 		return obj;

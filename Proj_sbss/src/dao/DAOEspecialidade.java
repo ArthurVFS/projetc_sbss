@@ -4,48 +4,48 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import model.Profissional;
+import model.Especialidade;
 
-public class DaoProfissional {
+public class DAOEspecialidade {
 	
 	
-	public void inserirProfissional(Profissional pro) {
+	public void inserirEspecialidade(Especialidade espe) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.save(pro);
+		sessao.save(espe);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void excluirProfissional(Profissional pro) {
+	public void excluirEspecialidade(Especialidade espe) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.delete(pro);
+		sessao.delete(espe);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void editarProfissional(Profissional pro) {
+	public void editarEspecialidade(Especialidade espe) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.update(pro);
+		sessao.update(espe);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public List<Profissional> listarProfissional() {
+	public List<Especialidade> listarEspecialidade() {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		List<Profissional> profissionais = sessao.createQuery("FROM Profissional").list();
+		List<Especialidade> especialidades = sessao.createQuery("FROM Especialidade").list();
 		sessao.getTransaction().commit();
 		sessao.close();
-		return profissionais;
+		return especialidades;
 	}
 	
-	public Profissional localizarProfissional(int id) {
+	public Especialidade localizarEspecialidade(int id) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		Profissional obj = (Profissional) sessao.createQuery("FROM Profissional WHERE id = " + id).uniqueResult();
+		Especialidade obj = (Especialidade) sessao.createQuery("FROM Especialidade WHERE id = " + id).uniqueResult();
 		sessao.getTransaction().commit();
 		sessao.close();
 		return obj;

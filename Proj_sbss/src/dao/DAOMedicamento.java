@@ -1,51 +1,50 @@
 package dao;
-
 import java.util.List;
 
 import org.hibernate.Session;
 
-import model.Profissional;
+import model.Medicamento;
 
-public class DaoProfissional {
+public class DAOMedicamento {
 	
 	
-	public void inserirProfissional(Profissional pro) {
+	public void inserirMedicamento(Medicamento med) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.save(pro);
+		sessao.save(med);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void excluirProfissional(Profissional pro) {
+	public void excluirMedicamento(Medicamento med) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.delete(pro);
+		sessao.delete(med);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void editarProfissional(Profissional pro) {
+	public void editarMedicamento(Medicamento med) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.update(pro);
+		sessao.update(med);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public List<Profissional> listarProfissional() {
+	public List<Medicamento> listarMedicamento() {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		List<Profissional> profissionais = sessao.createQuery("FROM Profissional").list();
+		List<Medicamento> medicamentos = sessao.createQuery("FROM Medicamento").list();
 		sessao.getTransaction().commit();
 		sessao.close();
-		return profissionais;
+		return medicamentos;
 	}
 	
-	public Profissional localizarProfissional(int id) {
+	public Medicamento localizarMedicamento(int id) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		Profissional obj = (Profissional) sessao.createQuery("FROM Profissional WHERE id = " + id).uniqueResult();
+		Medicamento obj = (Medicamento) sessao.createQuery("FROM Medicamento WHERE id = " + id).uniqueResult();
 		sessao.getTransaction().commit();
 		sessao.close();
 		return obj;
