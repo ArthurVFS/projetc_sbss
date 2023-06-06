@@ -4,48 +4,48 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import model.Profissional;
+import model.Exame;
 
-public class DaoProfissional {
+public class DAOExame {
 	
 	
-	public void inserirProfissional(Profissional pro) {
+	public void inserirExame(Exame exa) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.save(pro);
+		sessao.save(exa);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void excluirProfissional(Profissional pro) {
+	public void excluirExame(Exame exa) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.delete(pro);
+		sessao.delete(exa);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void editarProfissional(Profissional pro) {
+	public void editarExame(Exame exa) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.update(pro);
+		sessao.update(exa);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public List<Profissional> listarProfissional() {
+	public List<Exame> listarExame() {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		List<Profissional> profissionais = sessao.createQuery("FROM Profissional").list();
+		List<Exame> exames = sessao.createQuery("FROM Exame").list();
 		sessao.getTransaction().commit();
 		sessao.close();
-		return profissionais;
+		return exames;
 	}
 	
-	public Profissional localizarProfissional(int id) {
+	public Exame localizarExame(int id) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		Profissional obj = (Profissional) sessao.createQuery("FROM Profissional WHERE id = " + id).uniqueResult();
+		Exame obj = (Exame) sessao.createQuery("FROM Exame WHERE id = " + id).uniqueResult();
 		sessao.getTransaction().commit();
 		sessao.close();
 		return obj;
