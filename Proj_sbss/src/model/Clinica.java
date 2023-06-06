@@ -15,10 +15,19 @@ public class Clinica extends Fornecedor {
 	
 	
 	
+	@ManyToOne
+	private Avaliacao avaliacoes;
+	
+	
 	
 
 	public Clinica() {
 		
+	}
+
+	public Clinica( Avaliacao avaliacoes) {
+
+		this.avaliacoes = avaliacoes;
 	}
 
 	public int getId() {
@@ -29,6 +38,13 @@ public class Clinica extends Fornecedor {
 		this.id = id;
 	}
 
+	public Avaliacao getAvaliacoes() {
+		return avaliacoes;
+	}
+
+	public void setAvaliacoes(Avaliacao avaliacoes) {
+		this.avaliacoes = avaliacoes;
+	}
 	
 	
 	
