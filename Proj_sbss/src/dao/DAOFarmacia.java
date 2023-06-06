@@ -1,51 +1,50 @@
 package dao;
-
 import java.util.List;
 
 import org.hibernate.Session;
 
-import model.Profissional;
+import model.Farmacia;
 
-public class DaoProfissional {
+public class DAOFarmacia {
 	
 	
-	public void inserirProfissional(Profissional pro) {
+	public void inserirFarmacia(Farmacia farm) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.save(pro);
+		sessao.save(farm);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void excluirProfissional(Profissional pro) {
+	public void excluirFarmacia(Farmacia farm) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.delete(pro);
+		sessao.delete(farm);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void editarProfissional(Profissional pro) {
+	public void editarFarmacia(Farmacia farm) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.update(pro);
+		sessao.update(farm);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public List<Profissional> listarProfissional() {
+	public List<Farmacia> listarFarmacia() {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		List<Profissional> profissionais = sessao.createQuery("FROM Profissional").list();
+		List<Farmacia> farmacias = sessao.createQuery("FROM Farmacia").list();
 		sessao.getTransaction().commit();
 		sessao.close();
-		return profissionais;
+		return farmacias;
 	}
 	
-	public Profissional localizarProfissional(int id) {
+	public Farmacia localizarFarmacia(int id) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		Profissional obj = (Profissional) sessao.createQuery("FROM Profissional WHERE id = " + id).uniqueResult();
+		Farmacia obj = (Farmacia) sessao.createQuery("FROM Farmacia WHERE id = " + id).uniqueResult();
 		sessao.getTransaction().commit();
 		sessao.close();
 		return obj;

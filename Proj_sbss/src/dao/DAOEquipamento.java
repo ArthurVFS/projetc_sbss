@@ -4,48 +4,48 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import model.Profissional;
+import model.Equipamento;
 
-public class DaoProfissional {
+public class DAOEquipamento {
 	
 	
-	public void inserirProfissional(Profissional pro) {
+	public void inserirEquipamento(Equipamento equi) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.save(pro);
+		sessao.save(equi);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void excluirProfissional(Profissional pro) {
+	public void excluirEquipamento(Equipamento equi) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.delete(pro);
+		sessao.delete(equi);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public void editarProfissional(Profissional pro) {
+	public void editarEquipamento(Equipamento equi) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		sessao.update(pro);
+		sessao.update(equi);
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
 	
-	public List<Profissional> listarProfissional() {
+	public List<Equipamento> listarEquipamento() {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		List<Profissional> profissionais = sessao.createQuery("FROM Profissional").list();
+		List<Equipamento> equipamentos = sessao.createQuery("FROM Equipamento").list();
 		sessao.getTransaction().commit();
 		sessao.close();
-		return profissionais;
+		return equipamentos;
 	}
 	
-	public Profissional localizarProfissional(int id) {
+	public Equipamento localizarEquipamento(int id) {
 		Session sessao = ConexaoBD.getPesquisa().openSession();
 		sessao.beginTransaction();
-		Profissional obj = (Profissional) sessao.createQuery("FROM Profissional WHERE id = " + id).uniqueResult();
+		Equipamento obj = (Equipamento) sessao.createQuery("FROM Equipamento WHERE id = " + id).uniqueResult();
 		sessao.getTransaction().commit();
 		sessao.close();
 		return obj;

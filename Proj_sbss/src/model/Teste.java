@@ -1,40 +1,37 @@
 package model;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+
+
+
+import dao.DAOEspecialidade;
+import dao.DAOPlanoSaude;
+import dao.DaoProfissional;
 
 
 
 public class Teste {
 	public static void main(String[] args) {
 		
-		Especialidade e = new Especialidade();
-		PlanoSaude ps = new PlanoSaude();
+//		PlanoSaude pl = new PlanoSaude("Unimed");
+//		DAOPlanoSaude daoPl = new DAOPlanoSaude();
+//		daoPl.inserirPlanoSaude(pl);
+//		
+//		Especialidade es = new Especialidade("Cardiologista");
+//		DAOEspecialidade daoE = new DAOEspecialidade();
+//		daoE.inserirEspecialidade( es );
+//		
+//		Profissional p1 = new Profissional("Arthur", es, pl);
+		DaoProfissional daoPro = new DaoProfissional();
+//		daoPro.inserirProfissional( p1 );
+//		
 		
 		
+		for(Profissional pro : daoPro.listarProfissional()) {	
+		System.out.println("Profissional: " + pro.getNome());
+		System.out.println("--"+ pro.getEspecialidades().getNomeEspec());
+		System.out.println("Atende pelos seguintes planos: " + pro.getPlanosSaude().getNomeP());
+	}
 		
-		 SessionFactory sessionFactory = null;
-		try {
-			
-		 sessionFactory = new Configuration().configure().buildSessionFactory();
-			
-		}catch(Exception ex) {
-			System.err.println("Erro");
-			ex.printStackTrace();
-		}
-		
-		
-		
-		Session session = sessionFactory.openSession();
-		
-		session.beginTransaction();
-		
-		session.delete(ps);
-		
-		session.getTransaction().commit();
-		
-		session.close();
 		
 	}
 }
